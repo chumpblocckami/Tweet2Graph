@@ -1,0 +1,7 @@
+{
+  "consumer_key": "ljTq9EHZiEaUNg8EEjlnOMSA3",
+  "consumer_secret" : "MMoLok5ZMmfairx68XC7m9QoMSGKIMU2gMEYuls5TfjNxxH9He",
+  "access_token" : "3066173373-3FYp0qPyYlYpiw9Il3hK6IQtqVFZealC1dZcGOn",
+  "access_token_secret" : "R75FxerrhVrUD0KQHec6lecXDnsUPD9rHovLO95y3osER",
+  "cluster" : "mongodb+srv://ciotolaaaa:Atog@mmazzola29-vgdjv.mongodb.net/TWEETS?retryWrites=true&w=majority"
+}
