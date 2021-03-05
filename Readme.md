@@ -15,7 +15,7 @@ To install using pip, use
 * **Import the library**:
 
 ``` python
-import tweet2graph
+from tweet2graph import Tweets2Graph
 ```
 * **Choose which interaction between users are relevant for you**:
  ``` python
