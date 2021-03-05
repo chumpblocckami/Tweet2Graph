@@ -1,16 +1,14 @@
+import warnings
+warnings.simplefilter(action='ignore', category=FutureWarning)
+import debug_errors
 import glob
 import pandas as pd
 import dask.dataframe as dd
-
 from dask.diagnostics import ProgressBar
 import networkx as nx
-import matplotlib.pyplot as plt
 import json
-from datetime import datetime
 import os
 import pymongo
-
-import debug_errors
 
 class Tweets2Graph():
     def __init__(self,interactions,username,npartitions=2):
@@ -135,27 +133,3 @@ class Tweets2Graph():
         graph = self.transform()
         self.log.info("Graph loaded and created correctly")
         return graph
-
-if __name__ == "__main__":
-    backend = Tweets2Graph(interactions=["retweet"], #,"quote","reply"],
-                           username="screen_name")
-    print("Loading data",datetime.now())
-    #backend.from_file("examples/1614874276.csv")
-    #backend.from_folder("examples/csv/")
-    backend.from_mongo(connection_string='mongodb+srv://ciotolaaaa:Atog@mmazzola29-vgdjv.mongodb.net/TWEETS?retryWrites=true&w=majority',
-                       database="TWEETS",
-                       collection="sanremo")
-    print("Number of tweets", backend.data.shape)
-
-    print("Fit",datetime.now())
-    #get Graph
-    backend.fit()
-    print("Transform", datetime.now())
-    graph = backend.transform()
-    print("END",datetime.now())
-    #or simply
-    #graph = backend.fit_transform()
-
-    #enjoy
-    nx.draw(graph,with_labels=False,node_size=5,font_size=2,font_color="red",node_color="black")
-    plt.show()
