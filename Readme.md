@@ -33,15 +33,17 @@ from tweet2graph import Tweets2Graph
  
  #load from a mongodb collections
  backend.from_mongo(connection_string='<CONNECTION_STRING>',
-                     database=db,
-                     collection=collections")
- #or simply, from a pandas dataframe
+                     database='<DB_NAME>',
+                     collection='<COLLECTION_NAME>')
+                     
+ #or from a pandas dataframe
  backend.from_dataframe(dataframe)
  ```
- * **Fit/Transform**
+* **Fit/Transform**
   ``` python
   #organize data
   backend.fit()
+  
   #create graph
   graph = backend.transform()
   
@@ -49,18 +51,24 @@ from tweet2graph import Tweets2Graph
   graph = backend.fit_transform()
    ```
    
-  * **Show and save**
+* **Show and save**
   ``` python
   import networkx as nx
   nx.draw(graph,with_labels=False,node_size=5,font_size=5,font_color="red",node_color="black")
   nx.write_adjlist(G=graph)
   ```
+  
  ![graphs](./images/graph.png)
+
  ## TODO:
+-  [x] add connected component
+-  [x] .from_user("<USERNAME>") method
+-  [ ] Add metadata to tweets
  - [ ] Insert mentions in possible interactions
+ - [ ] Add custom exceptions
  - [ ] Add speed benchmark
  - [ ] Add from_stream() method
- - [ ] Add Dockerfile
+ - [ ] Dockerfile
 
 ## License
 

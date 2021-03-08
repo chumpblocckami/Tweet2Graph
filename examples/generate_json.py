@@ -2,14 +2,13 @@ import tweepy
 import json
 from datetime import datetime
 import os
+from dotenv import load_dotenv
+load_dotenv()
 
-with open("examples/psswd.json", "r") as file:
-    credentials = json.load(file)
-
-consumer_key = credentials["consumer_key"]
-consumer_secret = credentials["consumer_secret"]
-access_token = credentials["access_token"]
-access_token_secret = credentials["access_token_secret"]
+consumer_key = os.environ.get("CONSUMER_KEY")
+consumer_secret = os.environ.get("CONSUMER_SECRET")
+access_token = os.environ.get("ACCESS_TOKEN")
+access_token_secret = os.environ.get("ACCESS_TOKEN_SECRET")
 
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)

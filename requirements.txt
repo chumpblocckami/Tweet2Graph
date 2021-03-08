@@ -223,6 +223,7 @@ pyrsistent @ file:///C:/ci/pyrsistent_1600141795814/work
 PySocks @ file:///C:/ci/pysocks_1605287845585/work
 pytest==0.0.0
 python-dateutil==2.8.1
+python-dotenv==0.15.0
 python-jsonrpc-server @ file:///tmp/build/80754af9/python-jsonrpc-server_1600278539111/work
 python-language-server @ file:///tmp/build/80754af9/python-language-server_1607972495879/work
 pytz==2020.1
