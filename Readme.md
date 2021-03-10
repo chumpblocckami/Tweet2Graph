@@ -61,14 +61,15 @@ from tweet2graph import Tweets2Graph
  ![graphs](./images/graph.png)
 
  ## TODO:
--  [x] add connected component
--  [x] .from_user("<USERNAME>") method
--  [ ] Add metadata to tweets
- - [ ] Insert mentions in possible interactions
- - [ ] Add custom exceptions
- - [ ] Add speed benchmark
- - [ ] Add from_stream() method
- - [ ] Dockerfile
+- [x] add connected component
+- [x] `.from_user('<USER_NAME>')` method
+- [ ] Add metadata to tweet
+- [ ] Insert mentions in possible interactions
+- [ ] Add custom error and better explanation
+- [ ] Add speed benchmark and figures
+- [x] Add `.from_stream(id="<hashtag>")` method
+- [ ] Update `.from_stream(id="<hashtag>")` with two distinct processes
+- [ ] Dockerfile
 
 ## License
 
