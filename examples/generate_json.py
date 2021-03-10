@@ -22,6 +22,8 @@ class MyStreamListener(tweepy.StreamListener):
                 return
 
             print(status._json["user"]["screen_name"])
+            if "./json" not in os.listdir("./examples"):
+                os.mkdir("./examples/json/")
             with open("examples/json/"+str(round(datetime.timestamp(datetime.now())))+".json","w") as file:
                 json.dump(status._json,file)
         except Exception as e:
@@ -30,4 +32,4 @@ class MyStreamListener(tweepy.StreamListener):
 
 myStreamListener = MyStreamListener()
 myStream = tweepy.Stream(auth = api.auth, listener=myStreamListener)
-myStream.filter(track=['#sanremo2021','#sanremo'], is_async=True)
+myStream.filter(track=['#covid'], is_async=True)
